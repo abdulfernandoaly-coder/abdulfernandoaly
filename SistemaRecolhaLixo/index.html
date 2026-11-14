@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Recolha de Lixos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>♻️ Sistema de Gestão de Recolha de Lixos</h1>
+    <p>Gestão de solicitações de recolha de resíduos</p>
+</header>
+<main>
+    <section class="estatisticas">
+        <div class="card"><h3>Total</h3><p id="total">0</p></div>
+        <div class="card"><h3>Pendentes</h3><p id="pendentes">0</p></div>
+        <div class="card"><h3>Em recolha</h3><p id="emRecolha">0</p></div>
+        <div class="card"><h3>Recolhidos</h3><p id="recolhidos">0</p></div>
+    </section>
+
+    <section class="formulario">
+        <h2>Nova Solicitação de Recolha</h2>
+        <form id="formRecolha">
+            <label for="nome">Nome do cidadão:</label>
+            <input type="text" id="nome" required>
+
+            <label for="bairro">Bairro:</label>
+            <input type="text" id="bairro" required>
+
+            <label for="tipoLixo">Tipo de lixo:</label>
+            <select id="tipoLixo" required>
+                <option value="">Selecione</option>
+                <option>Doméstico</option>
+                <option>Plástico</option>
+                <option>Papel</option>
+                <option>Vidro</option>
+                <option>Orgânico</option>
+                <option>Eletrónico</option>
+            </select>
+
+            <label for="data">Data da recolha:</label>
+            <input type="date" id="data" required>
+
+            <button type="submit">Cadastrar Solicitação</button>
+        </form>
+    </section>
+
+    <section class="lista">
+        <h2>Solicitações de Recolha</h2>
+        <input type="text" id="pesquisa" placeholder="Pesquisar por nome ou bairro...">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th><th>Cidadão</th><th>Bairro</th><th>Tipo de lixo</th>
+                    <th>Data</th><th>Estado</th><th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaRecolhas"></tbody>
+        </table>
+    </section>
+</main>
+<footer><p>Sistema de Gestão de Recolha de Lixos © 2026</p></footer>
+<script src="script.js"></script>
+</body>
+</html>
